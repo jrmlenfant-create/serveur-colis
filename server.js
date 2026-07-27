@@ -10,9 +10,11 @@ app.use(express.json());
 app.use(cors());
 
 // Connexion à Supabase
-const SUPABASE_URL = 'VOTRE_SUPABASE_PROJECT_URL';
-const SUPABASE_SERVICE_KEY = 'VOTRE_SUPABASE_SERVICE_ROLE_KEY';
-const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
+// Connexion à Supabase (sécurisée via variables d'environnement)
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
+const supabase = createClient(uvweqaqzobywddsimhih, sb_secret_kHPawOKX6pNlJaRouTGtog_-1-Q8eO6);
+const supabase = createClient(uvweqaqzobywddsimhih, sb_secret_kHPawOKX6pNlJaRouTGtog_-1-Q8eO6);
 
 // Configuration Push VAPID
 const vapidKeys = webpush.generateVapidKeys();
